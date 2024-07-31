@@ -1,5 +1,7 @@
 ﻿# python_project_by_Nado
-<img src="https://capsule-render.vercel.app/api?type=모양&color=색상코드&height=높이&section=header&text=텍스트&fontSize=텍스트크기" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=BDBDC8&height=150&section=header" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=BDBDC8&height=150&section=footer" />
+
 유튜브 나도코딩의 파이썬 실전 프로젝트 8개를 실습하는 리포입니다.
 
 1. 게임 개발
