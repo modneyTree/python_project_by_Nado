@@ -1,0 +1,1 @@
+initialdir=r"C:\Users\Nadocoding\Desktop\PythonWorkspace\pygame_project\images")
