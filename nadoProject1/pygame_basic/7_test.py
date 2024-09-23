@@ -39,15 +39,14 @@ enemy_height = enemy_size[1] # 캐릭터의 세로 크기
 enemy_x_pos = (screen_width / 2) - (enemy_width / 2) # 화면 가로의 절반 크기에 해당하는 곳에 위치
 enemy_y_pos = (screen_height / 2) - (enemy_height / 2) # 화면 세로 크기 가장 아래에 해당하는 곳에 위치
 
-# 폰트 정의
-game_font = pygame.font.Font(None, 40) # 폰트 객체 생성(폰트, 크기)
+# 폰트 정의 
+game_font = pygame.font.Font(None, 40) # 폰트 객체 생성(폰트, 크기) 
 
-# 총 시간
-total_time = 10 # 10초
+# 총 시간 
+total_time = 10 # 10초 
 
-# 시작 시간 정보
-start_ticks = pygame.time.get_ticks() # 시작 tick을 받아옴
-
+# 시작 시간 정보 
+start_ticks = pygame.time.get_ticks() # 시작 tick을 받아옴, Pygame이 초기화된 시점(pygame.init())부터 현재까지 경과한 시간을 밀리초 단위로 반환
 
 
 # 이벤트 루프
@@ -109,18 +108,18 @@ while running:
     screen.blit(character, (character_x_pos, character_y_pos))  # 캐릭터 그리기
     screen.blit(enemy, (enemy_x_pos, enemy_y_pos))  # 적 그리기
 
-    # 타이머 집어넣기
-    # 경과 시간 계산
-    elapsed_time = (pygame.time.get_ticks() - start_ticks) / 1000 # ms -> s
-
-    timer = game_font.render(str(int(total_time - elapsed_time)), True, (255, 255, 255))
-    # 출력할 글자, True, 글자 색상
-    screen.blit(timer, (10, 10))
-
-    # 만약 시간이 0 이하이면 게임 종료
-    if total_time - elapsed_time <= 0:
-        print("타임아웃")
-        running = False
+    # 타이머 집어넣기 
+    # 경과 시간 계산 
+    elapsed_time = (pygame.time.get_ticks() - start_ticks) / 1000 # ms -> s 
+ 
+    timer = game_font.render(str(int(total_time - elapsed_time)), True, (255, 255, 255)) 
+    # 출력할 글자, True, 글자 색상 
+    screen.blit(timer, (10, 10)) 
+ 
+    # 만약 시간이 0 이하이면 게임 종료 
+    if total_time - elapsed_time <= 0: 
+        print("타임아웃") 
+        running = False 
 
     pygame.display.update() # 게임화면을 다시 그리기!, 이 작업을 해줘야 계속해서 나타남
 

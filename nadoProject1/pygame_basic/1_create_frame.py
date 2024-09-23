@@ -12,8 +12,8 @@ pygame.display.set_caption("Nado Game") # 게임 이름
 
 # 이벤트 루프
 running = True # 게임이 진행중인가?
-while running:
-    for event in pygame.event.get():    # 어떤 이벤트가 발생하였는가?, 
+while running:  
+    for event in pygame.event.get():    # 어떤 이벤트가 발생하였는가?, 현재 발생한 모든 이벤트를 리스트 형태로 반환합니다. 
         if event.type == pygame.QUIT: # 창이 닫히는 이벤트가 발생했는가?
             running = False # 게임이 진행중이 아님
 

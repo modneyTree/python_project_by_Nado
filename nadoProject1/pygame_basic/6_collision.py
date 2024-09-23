@@ -32,7 +32,7 @@ to_y = 0
 character_speed = 0.6
 
 # 적 enemy 캐릭터
-enemy = pygame.image.load("C:/Users/gladi/study/nadoProject/nadoProject1/pygame_basic/enemy.png")
+enemy = pygame.image.load("C:/Users/gladi/study/nadoProject/nadoProject1/pygame_basic/enemy.png") 
 enemy_size = enemy.get_rect().size # 이미지의 크기를 구해옴
 enemy_width = enemy_size[0] # 캐릭터의 가로 크기
 enemy_height = enemy_size[1] # 캐릭터의 세로 크기
@@ -81,9 +81,9 @@ while running:
         character_y_pos = screen_height - character_height
 
     # 충돌 처리를 위한 rect 정보 업데이트
-    character_rect = character.get_rect()
-    character_rect.left = character_x_pos
-    character_rect.top = character_y_pos
+    character_rect = character.get_rect()   # 캐릭터 rect 정보 업데이트, rect는 사각형을 의미, 캐릭터의 위치를 업데이트
+    character_rect.left = character_x_pos   # 캐릭터의 x 좌표를 업데이트
+    character_rect.top = character_y_pos    # 캐릭터의 y 좌표를 업데이트
 
     enemy_rect = enemy.get_rect()
     enemy_rect.left = enemy_x_pos

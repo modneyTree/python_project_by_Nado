@@ -11,7 +11,7 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Nado Game") # 게임 이름
 
 # FPS
-clock = pygame.time.Clock()
+clock = pygame.time.Clock() # 시간 설정, **프레임 속도(FPS)**를 제어하기 위해 pygame.time.Clock 객체를 생성
 
 # 배경 이미지 불러오기
 background = pygame.image.load("C:/Users/gladi/study/nadoProject/nadoProject1/pygame_basic/background.png")
@@ -28,15 +28,17 @@ character_y_pos = screen_height - character_height # 화면 세로 크기 가장
 to_x = 0
 to_y = 0
 
+# A. dt(델타타임)를 사용하지 않을 경우 (프레임당 픽셀 수)
+# B. dt를 사용할 경우 (초당 픽셀 수)
 # 이동 속도
-character_speed = 0.6
+character_speed = 0.6   # 이동 속도, 초당 이동할 픽셀 수
 
 # 이벤트 루프
 running = True # 게임이 진행중인가?
 while running:
-    dt = clock.tick(60) # 게임화면의 초당 프레임 수를 설정
+    dt = clock.tick(60) # 게임화면의 초당 프레임 수를 설정, clock.tick(60)이 반환하는 값은 **현재 프레임과 이전 프레임 간의 시간 차이
 
-    print("fps : " + str(clock.get_fps()))
+    print("fps : " + str(clock.get_fps()))  # 프레임 수 출력
 
 
     for event in pygame.event.get():    # 어떤 이벤트가 발생하였는가?
@@ -57,7 +59,7 @@ while running:
                 to_x = 0
             elif event.key == pygame.K_UP or event.key == pygame.K_DOWN:
                 to_y = 0
-    character_x_pos += to_x * dt
+    character_x_pos += to_x * dt    # 프레임이 바뀌어도 속도가 일정하게 유지되도록 함
     character_y_pos += to_y * dt
 
     # 가로 경계값 처리
