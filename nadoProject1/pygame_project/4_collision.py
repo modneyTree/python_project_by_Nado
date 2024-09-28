@@ -77,7 +77,7 @@ balls.append({
     "init_spd_y": ball_speed_y[0]   # y 최초 속도
     })
 
-# 사라질 무가, 공 정보 저장 변수
+# 사라질 무기, 공 정보 저장 변수
 weapon_to_remove = -1
 ball_to_remove = -1
 
@@ -177,7 +177,7 @@ while running:
                 break
             
     # 충돌된 공 or 무기 없애기
-    if ball_to_remove > -1:
+    if ball_to_remove > -1: 
         del balls[ball_to_remove]
         ball_to_remove = -1
     

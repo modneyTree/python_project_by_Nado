@@ -13,11 +13,12 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Nado Pang") # 게임 이름
 
 # FPS
-clock = pygame.time.Clock()
+clock = pygame.time.Clock() # pygame.time.Clock 객체 생성 -> 프레임 설정, 시간 계산, 딜레이 설정 등에 사용
 ############################################################################################################
 
 # 1. 사용자 게임 초기화(배경 화면, 게임 이미지, 좌표, 폰트 등)
 current_path = os.path.dirname(__file__) # 현재 파일의 위치 반환
+# print("current_path: ", current_path) # C:\Users\gladi\study\nadoProject\nadoProject1\pygame_project
 image_path = os.path.join(current_path, "images") # images 폴더 위치 반환
 
 # 배경 만들기
@@ -25,7 +26,7 @@ background = pygame.image.load(os.path.join(image_path, "background.png"))
 
 # 스테이지 만들기
 stage = pygame.image.load(os.path.join(image_path, "stage.png"))
-stage_size = stage.get_rect().size
+stage_size = stage.get_rect().size  # 스테이지의 크기를 구해옴
 stage_height = stage_size[1] # 스테이지 높이 위에 캐릭터를 두기 위해 사용
 
 # 캐릭터 만들기

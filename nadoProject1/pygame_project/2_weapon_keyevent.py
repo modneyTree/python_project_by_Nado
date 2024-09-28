@@ -48,7 +48,7 @@ weapon_size = weapon.get_rect().size
 weapon_width = weapon_size[0]
 
 # 무기는 한 번에 여러 발 발사 가능
-weapons = []
+weapons = []    # 무기 리스트,  x, y 좌표를 함께 저장해서 처리
 
 # 무기 이동 속도
 weapon_speed = 10
@@ -68,9 +68,9 @@ while running:
                 character_to_x -= character_speed
             elif event.key == pygame.K_RIGHT:
                 character_to_x += character_speed
-            elif event.key == pygame.K_SPACE:
-                weapon_x_pos = character_x_pos + (character_width / 2) - (weapon_width / 2)
-                weapon_y_pos = character_y_pos
+            elif event.key == pygame.K_SPACE: # 무기 발사
+                weapon_x_pos = character_x_pos + (character_width / 2) - (weapon_width / 2) # 무기는 캐릭터의 중앙에서 발사되도록 설정
+                weapon_y_pos = character_y_pos  # 캐릭터의 y 좌표와 같게 설정
                 weapons.append([weapon_x_pos, weapon_y_pos])
         
         if event.type == pygame.KEYUP:

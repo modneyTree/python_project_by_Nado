@@ -70,7 +70,7 @@ balls = []
 # 최초 발생하는 큰 공 추가
 balls.append({ 
     "pos_x": 50, # 공의 x 좌표
-    "pos_y": 50, 
+    "pos_y": 50, # 공의 y 좌표
     "img_idx": 0, # 공의 이미지 인덱스
     "to_x": 3,  # x축 이동 방향, -3이면 왼쪽으로, 3이면 오른쪽으로
     "to_y": -6, # y축 이동 방향
@@ -188,7 +188,7 @@ while running:
 
                     # 왼쪽으로 튕겨나가는 작은 공
                     balls.append({ 
-                        "pos_x": ball_pos_x + (ball_width / 2) - (small_ball_width / 2), # 공의 x 좌표
+                        "pos_x": ball_pos_x + (ball_width / 2) - (small_ball_width / 2), # 공의 x 좌표, 공의 가운데에서 나가야 함
                         "pos_y": ball_pos_y + (ball_height / 2) - (small_ball_height / 2), 
                         "img_idx": ball_img_idx + 1, # 공의 이미지 인덱스
                         "to_x": -3,  # x축 이동 방향, -3이면 왼쪽으로, 3이면 오른쪽으로
