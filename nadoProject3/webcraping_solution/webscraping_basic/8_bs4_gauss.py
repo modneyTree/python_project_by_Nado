@@ -5,6 +5,8 @@ url = "https://comic.naver.com/webtoon/list.nhn?titleId=675554"
 res = requests.get(url)
 res.raise_for_status()
 
+# print(res.text)
+
 soup = BeautifulSoup(res.text, "lxml")
 # cartoons = soup.find_all("td", attrs={"class":"title"})
 # title = cartoons[0].a.get_text()

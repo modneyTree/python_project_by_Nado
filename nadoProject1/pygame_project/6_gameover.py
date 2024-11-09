@@ -180,6 +180,9 @@ while running:
             running = False
             break
         # 공과 무기들 충돌 처리
+        # 중첩된 for-else 구조:
+        # 무기와 공의 충돌이 발생하지 않으면 외부 루프를 계속 진행합니다.
+        # 충돌이 발생하면 break하여 이중 for 루프를 탈출합니다.
         for weapon_idx, weapon_val in enumerate(weapons):
             weapon_rect = weapon.get_rect()
             weapon_rect.left = weapon_val[0]
@@ -220,7 +223,7 @@ while running:
                         "to_y": -6, # y축 이동 방향
                         "init_spd_y": ball_speed_y[ball_img_idx + 1]   # y 최초 속도
                         })
-                break
+                break   # 충돌되었을 경우 안쪽 for 문 탈출
         else:   # 계속 게임을 진행
             continue    # 안쪽 for 문 조건이 맞지 않으면 continue. 바깥 for 문 계속 수행
         break   # 안쪽 for 문에서 break를 만나면 여기로 진입 가능. 2중 for 문을 한번에 탈출
@@ -254,8 +257,8 @@ while running:
     screen.blit(character, (character_x_pos, character_y_pos)) # 캐릭터 그리기
 
 
-    # 경과 시간 계산
-    elapsed_time = (pygame.time.get_ticks() - start_ticks) / 1000   
+    # 경과 시간 계산    
+    elapsed_time = (pygame.time.get_ticks() - start_ticks) / 1000       
     timer = game_font.render("Time : {}".format(int(total_time - elapsed_time)), True, (255, 255, 255))
     screen.blit(timer, (10, 10))    
 

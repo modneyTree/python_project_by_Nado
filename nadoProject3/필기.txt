@@ -12,3 +12,6 @@ pip install requests
 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36
 
 // javascript가 동적으로 콘텐츠를 로드하기 때문에 6, 7의 예제가 잘 동작하지 않는다.
+    beautifulsoup4로는 한계가 있음
+
+// beautifulsoup 공식문서 한글화

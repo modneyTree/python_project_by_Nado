@@ -1,17 +1,22 @@
 import requests
 from bs4 import BeautifulSoup
 
-url ="https://comic.naver.com/webtoon/weekday.nhn"
+url ="https://comic.naver.com/webtoon"
 res = requests.get(url)
 res.raise_for_status()
 
+with open("6_bs4.html", "w", encoding="utf8") as f:
+    f.write(res.text)
+
+# print(res.text)
+
 soup = BeautifulSoup(res.text, "lxml")
-# print(soup.title)
+
+print(soup.title)
 # print(soup.title.get_text())
 # print(soup.a) # soup 객체에서 처음 발견되는 a element 출력
 # print(soup.a.attrs) # a element 의 속성 정보를 출력
 # print(soup.a["href"]) # a element 의 href 속성 '값' 정보를 출력
-
 # print(soup.find("a", attrs={"class":"Nbtn_upload"})) # class="Nbtn_upload" 인 a element 를 찾아줘
 # print(soup.find(attrs={"class":"Nbtn_upload"})) # class="Nbtn_upload" 인 어떤 element 를 찾아줘
 
@@ -34,5 +39,5 @@ soup = BeautifulSoup(res.text, "lxml")
 
 # print(rank1.find_next_siblings("li"))
 
-webtoon = soup.find("a", text="독립일기-11화 밥공기 딜레마")
+webtoon = soup.find("a", string="")
 print(webtoon)

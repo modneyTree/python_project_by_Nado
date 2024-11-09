@@ -17,7 +17,7 @@ print(soup.title)
 # print(soup.find(attrs={"class":"Nbtn_upload"})) # class="Nbtn_upload" 인 어떤 element 를 찾아줘
 
 # print(soup.find("li", attrs={"class":"rank01"}))
-rank1 = soup.find("li", attrs={"class":"rank01"})
+# rank1 = soup.find("li", attrs={"class":"rank01"})
 #print(rank1.a.get_text())
 #print(rank1.next_sibling)
 # rank2 = rank1.next_sibling.next_sibling
